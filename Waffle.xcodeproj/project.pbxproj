@@ -11,6 +11,9 @@
 		CE0466C22ABC5E3D005ACC25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0466C12ABC5E3D005ACC25 /* ContentView.swift */; };
 		CE0466C42ABC5E3E005ACC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0466C32ABC5E3E005ACC25 /* Assets.xcassets */; };
 		CE0466C82ABC5E3E005ACC25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0466C72ABC5E3E005ACC25 /* Preview Assets.xcassets */; };
+		CE0466D02ABC5E83005ACC25 /* DeviceHardware in Frameworks */ = {isa = PBXBuildFile; productRef = CE0466CF2ABC5E83005ACC25 /* DeviceHardware */; };
+		CE0466D32ABC5ED2005ACC25 /* CoreWafer in Frameworks */ = {isa = PBXBuildFile; productRef = CE0466D22ABC5ED2005ACC25 /* CoreWafer */; };
+		CE0466D52ABC6251005ACC25 /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,7 @@
 		CE0466C32ABC5E3E005ACC25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0466C52ABC5E3E005ACC25 /* Waffle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waffle.entitlements; sourceTree = "<group>"; };
 		CE0466C72ABC5E3E005ACC25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0466D02ABC5E83005ACC25 /* DeviceHardware in Frameworks */,
+				CE0466D32ABC5ED2005ACC25 /* CoreWafer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +63,7 @@
 				CE0466C32ABC5E3E005ACC25 /* Assets.xcassets */,
 				CE0466C52ABC5E3E005ACC25 /* Waffle.entitlements */,
 				CE0466C62ABC5E3E005ACC25 /* Preview Content */,
+				CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */,
 			);
 			path = Waffle;
 			sourceTree = "<group>";
@@ -85,6 +92,10 @@
 			dependencies = (
 			);
 			name = Waffle;
+			packageProductDependencies = (
+				CE0466CF2ABC5E83005ACC25 /* DeviceHardware */,
+				CE0466D22ABC5ED2005ACC25 /* CoreWafer */,
+			);
 			productName = Waffle;
 			productReference = CE0466BC2ABC5E3D005ACC25 /* Waffle.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +124,10 @@
 				Base,
 			);
 			mainGroup = CE0466B32ABC5E3D005ACC25;
+			packageReferences = (
+				CE0466CE2ABC5E83005ACC25 /* XCRemoteSwiftPackageReference "DeviceHardware" */,
+				CE0466D12ABC5ED2005ACC25 /* XCRemoteSwiftPackageReference "CoreWafer" */,
+			);
 			productRefGroup = CE0466BD2ABC5E3D005ACC25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0466C22ABC5E3D005ACC25 /* ContentView.swift in Sources */,
+				CE0466D52ABC6251005ACC25 /* DeviceInformation.swift in Sources */,
 				CE0466C02ABC5E3D005ACC25 /* WaffleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +285,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -277,8 +294,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -307,6 +324,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -315,8 +333,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -354,6 +372,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE0466CE2ABC5E83005ACC25 /* XCRemoteSwiftPackageReference "DeviceHardware" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Shakshi3104/DeviceHardware";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		CE0466D12ABC5ED2005ACC25 /* XCRemoteSwiftPackageReference "CoreWafer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Shakshi3104/CoreWafer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE0466CF2ABC5E83005ACC25 /* DeviceHardware */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE0466CE2ABC5E83005ACC25 /* XCRemoteSwiftPackageReference "DeviceHardware" */;
+			productName = DeviceHardware;
+		};
+		CE0466D22ABC5ED2005ACC25 /* CoreWafer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE0466D12ABC5ED2005ACC25 /* XCRemoteSwiftPackageReference "CoreWafer" */;
+			productName = CoreWafer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE0466B42ABC5E3D005ACC25 /* Project object */;
 }
