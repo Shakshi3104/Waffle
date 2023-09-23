@@ -32,11 +32,15 @@ struct ContentView: View {
         NavigationStack {
             List {
                 Section("CPU") {
-                    WafersView(processor: processor)
-                        .scaleEffect(0.65)
-                        .onAppear {
-                            processor.start()
-                        }
+                    HStack {
+                        Spacer()
+                        WafersView(processor: processor)
+                            .scaleEffect(0.65)
+                            .onAppear {
+                                processor.start()
+                            }
+                        Spacer()
+                    }
                 }
                 
                 Section("Device") {
