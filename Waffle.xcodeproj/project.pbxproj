@@ -24,6 +24,8 @@
 		CE0466C52ABC5E3E005ACC25 /* Waffle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waffle.entitlements; sourceTree = "<group>"; };
 		CE0466C72ABC5E3E005ACC25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
+		CE736E2D2AC1A69E00B183E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CE736E2F2AC1A7BB00B183E4 /* waffle_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waffle_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,8 @@
 		CE0466B32ABC5E3D005ACC25 = {
 			isa = PBXGroup;
 			children = (
+				CE736E2E2AC1A79C00B183E4 /* materials */,
+				CE736E2D2AC1A69E00B183E4 /* README.md */,
 				CE0466BE2ABC5E3D005ACC25 /* Waffle */,
 				CE0466BD2ABC5E3D005ACC25 /* Products */,
 			);
@@ -74,6 +78,14 @@
 				CE0466C72ABC5E3E005ACC25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE736E2E2AC1A79C00B183E4 /* materials */ = {
+			isa = PBXGroup;
+			children = (
+				CE736E2F2AC1A7BB00B183E4 /* waffle_icon.png */,
+			);
+			path = materials;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
