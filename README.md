@@ -6,7 +6,7 @@
 
 Waffle🧇 is the app for checking the load of each core of CPU. Also, you can check device information.
 
-This app is similer to [Gaufre for macOS](https://github.com/Shakshi3104/Gaufre). So, the app name was derived from sillicon "wafer".
+This app is similer to [Gaufre for macOS](https://github.com/Shakshi3104/Gaufre). So, the app name was derived from silicon "wafer".
 
 ## Requirements
 
