@@ -45,12 +45,22 @@ struct ContentView: View {
                 
                 Section("Device") {
                     ListRow(key: "Device", value: deviceInfo.device)
+                    
                     ListRow(key: "Model Identifier", value: deviceInfo.modelIdentifier)
                     ListRow(key: "OS", value: deviceInfo.os)
+                    
                     ListRow(key: "Processor", value: deviceInfo.processor)
+                    
                     ListRow(key: "CPU", value: deviceInfo.cpu)
+                    ListRow(key: "Efficiency Cores", 
+                            value: "\(deviceInfo.efficiencyCore)-core")
+                    ListRow(key: "Performance Cores", 
+                            value: "\(deviceInfo.performanceCore)-core")
+                    
                     ListRow(key: "GPU", value: deviceInfo.gpu)
+                    
                     ListRow(key: "Neural Engine", value: deviceInfo.neuralEngine)
+                    
                     ListRow(key: "RAM", value: deviceInfo.ramString)
                 }
                 

@@ -11,6 +11,7 @@ import UIKit
 
 import Foundation
 
+import CoreWafer
 import DeviceHardware
 
 
@@ -22,6 +23,8 @@ class DeviceInfo {
     let os: String
     let processor: String
     let cpu: String
+    let efficiencyCore: Int
+    let performanceCore: Int
     let gpu: String
     let neuralEngine: String
     
@@ -32,6 +35,8 @@ class DeviceInfo {
     let modelIdentifier: String
     
     init() {
+        let coreType = CoreTypeInformation()
+        
         // macOS or Catalystの場合
         #if os(macOS) || targetEnvironment(macCatalyst)
         device = MacDeviceHardware.deviceHardware.modelName
@@ -47,6 +52,9 @@ class DeviceInfo {
         ram = MacDeviceHardware.deviceHardware.ram
         ramString = MacDeviceHardware.deviceHardware.ramString
         modelIdentifier = MacDeviceHardware.deviceHardware.modelIdentifier
+        
+        efficiencyCore = coreType.efficiencyCoreCount
+        performanceCore = coreType.performanceCoreCount
         // iOSの場合
         #elseif os(iOS)
         device = UIDeviceHardware.deviceHardware.modelName
@@ -60,6 +68,9 @@ class DeviceInfo {
         ram = UIDeviceHardware.deviceHardware.ram
         ramString = UIDeviceHardware.deviceHardware.ramString
         modelIdentifier = UIDeviceHardware.deviceHardware.modelIdentifier
+        
+        efficiencyCore = coreType.efficiencyCoreCount
+        performanceCore = coreType.performanceCoreCount
         #endif
     }
 }
