@@ -12,18 +12,21 @@ struct CPUView: View {
     @ObservedObject var processor: ProcessorObserver
     
     var body: some View {
-        List {
-            Section("Usage") {
-                HStack {
-                    Spacer()
-                    WafersView(processor: processor)
-                        .scaleEffect(0.65)
-                        .onAppear {
-                            processor.start()
-                        }
-                    Spacer()
+        NavigationStack {
+            List {
+                Section("Usage") {
+                    HStack {
+                        Spacer()
+                        WafersView(processor: processor)
+                            .scaleEffect(0.65)
+                            .onAppear {
+                                processor.start()
+                            }
+                        Spacer()
+                    }
                 }
             }
+            .navigationTitle("CPU")
         }
     }
 }
