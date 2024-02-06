@@ -14,6 +14,8 @@
 		CE0466D02ABC5E83005ACC25 /* DeviceHardware in Frameworks */ = {isa = PBXBuildFile; productRef = CE0466CF2ABC5E83005ACC25 /* DeviceHardware */; };
 		CE0466D32ABC5ED2005ACC25 /* CoreWafer in Frameworks */ = {isa = PBXBuildFile; productRef = CE0466D22ABC5ED2005ACC25 /* CoreWafer */; };
 		CE0466D52ABC6251005ACC25 /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */; };
+		CEDBBB1E2B7241D700F94C5F /* CPUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBBB1D2B7241D700F94C5F /* CPUView.swift */; };
+		CEDBBB202B72435F00F94C5F /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
 		CE736E2D2AC1A69E00B183E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE736E2F2AC1A7BB00B183E4 /* waffle_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waffle_icon.png; sourceTree = "<group>"; };
+		CEDBBB1D2B7241D700F94C5F /* CPUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUView.swift; sourceTree = "<group>"; };
+		CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +68,12 @@
 			children = (
 				CE0466BF2ABC5E3D005ACC25 /* WaffleApp.swift */,
 				CE0466C12ABC5E3D005ACC25 /* ContentView.swift */,
+				CEDBBB1D2B7241D700F94C5F /* CPUView.swift */,
 				CE0466C32ABC5E3E005ACC25 /* Assets.xcassets */,
 				CE0466C52ABC5E3E005ACC25 /* Waffle.entitlements */,
 				CE0466C62ABC5E3E005ACC25 /* Preview Content */,
 				CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */,
+				CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */,
 			);
 			path = Waffle;
 			sourceTree = "<group>";
@@ -120,7 +126,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					CE0466BB2ABC5E3D005ACC25 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -168,7 +174,9 @@
 			files = (
 				CE0466C22ABC5E3D005ACC25 /* ContentView.swift in Sources */,
 				CE0466D52ABC6251005ACC25 /* DeviceInformation.swift in Sources */,
+				CEDBBB202B72435F00F94C5F /* DeviceView.swift in Sources */,
 				CE0466C02ABC5E3D005ACC25 /* WaffleApp.swift in Sources */,
+				CEDBBB1E2B7241D700F94C5F /* CPUView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,9 +216,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,9 +276,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -292,6 +304,7 @@
 				CODE_SIGN_ENTITLEMENTS = Waffle/Waffle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Waffle/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -308,15 +321,16 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Waffle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -331,6 +345,7 @@
 				CODE_SIGN_ENTITLEMENTS = Waffle/Waffle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Waffle/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -347,15 +362,16 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Waffle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

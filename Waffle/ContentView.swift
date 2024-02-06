@@ -29,47 +29,38 @@ struct ContentView: View {
     private let deviceInfo = DeviceInfo.shared
     
     var body: some View {
-        NavigationStack {
-            List {
-                Section("CPU") {
-                    HStack {
-                        Spacer()
-                        WafersView(processor: processor)
-                            .scaleEffect(0.65)
-                            .onAppear {
-                                processor.start()
-                            }
-                        Spacer()
-                    }
+        TabView {
+            CPUView(processor: processor)
+                .tabItem {
+                    Label("CPU", systemImage: "cpu")
                 }
-                
-                Section("Device") {
-                    ListRow(key: "Device", value: deviceInfo.device)
-                    
-                    ListRow(key: "Model Identifier", value: deviceInfo.modelIdentifier)
-                    ListRow(key: "OS", value: deviceInfo.os)
-                    
-                    ListRow(key: "Processor", value: deviceInfo.processor)
-                    
-                    ListRow(key: "CPU", value: deviceInfo.cpu)
-                    ListRow(key: "Efficiency Cores", 
-                            value: "\(deviceInfo.efficiencyCore)-core")
-                    ListRow(key: "Performance Cores", 
-                            value: "\(deviceInfo.performanceCore)-core")
-                    
-                    ListRow(key: "GPU", value: deviceInfo.gpu)
-                    
-                    ListRow(key: "Neural Engine", value: deviceInfo.neuralEngine)
-                    
-                    ListRow(key: "RAM", value: deviceInfo.ramString)
+            
+            DeviceView(deviceInfo: deviceInfo)
+                .tabItem {
+                    Label("Device", systemImage: getDeviceIcon())
                 }
-                
-            }
-            .navigationTitle("Waffle")
         }
     }
 }
 
+// MARK: - Change the device icon for each OS
+func getDeviceIcon() ->  String {
+#if targetEnvironment(macCatalyst)
+    // TODO: Change the device icon for each Mac series via DeviceHardware
+    return "laptopcomputer"
+#else
+    switch UIDevice.current.userInterfaceIdiom {
+    case .phone:
+        return "iphone"
+    case .pad:
+        return "ipad"
+    default:
+        return "ipod"
+    }
+#endif
+}
+
+// MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
