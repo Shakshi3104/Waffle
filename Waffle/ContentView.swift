@@ -7,21 +7,9 @@
 
 import SwiftUI
 import CoreWafer
+import DeviceHardware
 
-// MARK: -
-struct ListRow: View {
-    var key: String
-    var value: String
-    
-    var body: some View {
-        HStack {
-            Text(key)
-            Spacer()
-            Text(value)
-                .foregroundColor(.secondary)
-        }
-    }
-}
+
 
 // MARK: -
 struct ContentView: View {
@@ -45,9 +33,24 @@ struct ContentView: View {
 
 // MARK: - Change the device icon for each OS
 func getDeviceIcon() ->  String {
-#if targetEnvironment(macCatalyst)
+#if targetEnvironment(macCatalyst) || os(macOS)
     // TODO: Change the device icon for each Mac series via DeviceHardware
-    return "laptopcomputer"
+    let macDeivce = MacDeviceHardware.deviceHardware
+    let macModelName = macDeivce.modelName
+    
+    if macModelName.contains("iMac") {
+        return "desktopcomputer"
+    } else if macModelName.contains("Mac mini") {
+        return "macmini"
+    } else if macModelName.contains("Mac Studio") {
+        return "macstudio"
+    } else if macModelName.contains("Mac Pro") {
+        return "macpro.gen3"
+    } else if macModelName.contains("MacBook") {
+        return "macbook"
+    } else {
+        return "laptopcomputer"
+    }
 #else
     switch UIDevice.current.userInterfaceIdiom {
     case .phone:

@@ -11,11 +11,13 @@
 		CE0466C22ABC5E3D005ACC25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0466C12ABC5E3D005ACC25 /* ContentView.swift */; };
 		CE0466C42ABC5E3E005ACC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0466C32ABC5E3E005ACC25 /* Assets.xcassets */; };
 		CE0466C82ABC5E3E005ACC25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0466C72ABC5E3E005ACC25 /* Preview Assets.xcassets */; };
-		CE0466D02ABC5E83005ACC25 /* DeviceHardware in Frameworks */ = {isa = PBXBuildFile; productRef = CE0466CF2ABC5E83005ACC25 /* DeviceHardware */; };
 		CE0466D32ABC5ED2005ACC25 /* CoreWafer in Frameworks */ = {isa = PBXBuildFile; productRef = CE0466D22ABC5ED2005ACC25 /* CoreWafer */; };
 		CE0466D52ABC6251005ACC25 /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */; };
 		CEDBBB1E2B7241D700F94C5F /* CPUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBBB1D2B7241D700F94C5F /* CPUView.swift */; };
 		CEDBBB202B72435F00F94C5F /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */; };
+		CEE3D3F12C1EF47400114C60 /* ProcessorKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEE3D3F02C1EF47400114C60 /* ProcessorKit */; };
+		CEE3D3F42C1EF53700114C60 /* DeviceHardware in Frameworks */ = {isa = PBXBuildFile; productRef = CEE3D3F32C1EF53700114C60 /* DeviceHardware */; };
+		CEE3D3F62C1F072600114C60 /* UtilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3D3F52C1F072600114C60 /* UtilityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		CE736E2F2AC1A7BB00B183E4 /* waffle_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waffle_icon.png; sourceTree = "<group>"; };
 		CEDBBB1D2B7241D700F94C5F /* CPUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUView.swift; sourceTree = "<group>"; };
 		CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		CEE3D3F52C1F072600114C60 /* UtilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,8 +40,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0466D02ABC5E83005ACC25 /* DeviceHardware in Frameworks */,
+				CEE3D3F12C1EF47400114C60 /* ProcessorKit in Frameworks */,
 				CE0466D32ABC5ED2005ACC25 /* CoreWafer in Frameworks */,
+				CEE3D3F42C1EF53700114C60 /* DeviceHardware in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +78,7 @@
 				CE0466C62ABC5E3E005ACC25 /* Preview Content */,
 				CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */,
 				CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */,
+				CEE3D3F52C1F072600114C60 /* UtilityView.swift */,
 			);
 			path = Waffle;
 			sourceTree = "<group>";
@@ -111,8 +116,9 @@
 			);
 			name = Waffle;
 			packageProductDependencies = (
-				CE0466CF2ABC5E83005ACC25 /* DeviceHardware */,
 				CE0466D22ABC5ED2005ACC25 /* CoreWafer */,
+				CEE3D3F02C1EF47400114C60 /* ProcessorKit */,
+				CEE3D3F32C1EF53700114C60 /* DeviceHardware */,
 			);
 			productName = Waffle;
 			productReference = CE0466BC2ABC5E3D005ACC25 /* Waffle.app */;
@@ -143,8 +149,9 @@
 			);
 			mainGroup = CE0466B32ABC5E3D005ACC25;
 			packageReferences = (
-				CE0466CE2ABC5E83005ACC25 /* XCRemoteSwiftPackageReference "DeviceHardware" */,
 				CE0466D12ABC5ED2005ACC25 /* XCRemoteSwiftPackageReference "CoreWafer" */,
+				CEE3D3EF2C1EF47400114C60 /* XCRemoteSwiftPackageReference "ProcessorKit" */,
+				CEE3D3F22C1EF53700114C60 /* XCRemoteSwiftPackageReference "DeviceHardware" */,
 			);
 			productRefGroup = CE0466BD2ABC5E3D005ACC25 /* Products */;
 			projectDirPath = "";
@@ -173,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0466C22ABC5E3D005ACC25 /* ContentView.swift in Sources */,
+				CEE3D3F62C1F072600114C60 /* UtilityView.swift in Sources */,
 				CE0466D52ABC6251005ACC25 /* DeviceInformation.swift in Sources */,
 				CEDBBB202B72435F00F94C5F /* DeviceView.swift in Sources */,
 				CE0466C02ABC5E3D005ACC25 /* WaffleApp.swift in Sources */,
@@ -402,14 +410,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CE0466CE2ABC5E83005ACC25 /* XCRemoteSwiftPackageReference "DeviceHardware" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Shakshi3104/DeviceHardware";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		CE0466D12ABC5ED2005ACC25 /* XCRemoteSwiftPackageReference "CoreWafer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Shakshi3104/CoreWafer.git";
@@ -418,18 +418,39 @@
 				minimumVersion = 0.0.7;
 			};
 		};
+		CEE3D3EF2C1EF47400114C60 /* XCRemoteSwiftPackageReference "ProcessorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Shakshi3104/ProcessorKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+		CEE3D3F22C1EF53700114C60 /* XCRemoteSwiftPackageReference "DeviceHardware" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Shakshi3104/DeviceHardware";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CE0466CF2ABC5E83005ACC25 /* DeviceHardware */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE0466CE2ABC5E83005ACC25 /* XCRemoteSwiftPackageReference "DeviceHardware" */;
-			productName = DeviceHardware;
-		};
 		CE0466D22ABC5ED2005ACC25 /* CoreWafer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE0466D12ABC5ED2005ACC25 /* XCRemoteSwiftPackageReference "CoreWafer" */;
 			productName = CoreWafer;
+		};
+		CEE3D3F02C1EF47400114C60 /* ProcessorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEE3D3EF2C1EF47400114C60 /* XCRemoteSwiftPackageReference "ProcessorKit" */;
+			productName = ProcessorKit;
+		};
+		CEE3D3F32C1EF53700114C60 /* DeviceHardware */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEE3D3F22C1EF53700114C60 /* XCRemoteSwiftPackageReference "DeviceHardware" */;
+			productName = DeviceHardware;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
