@@ -9,20 +9,7 @@ import SwiftUI
 import CoreWafer
 import DeviceHardware
 
-// MARK: -
-struct ListRow: View {
-    var key: String
-    var value: String
-    
-    var body: some View {
-        HStack {
-            Text(key)
-            Spacer()
-            Text(value)
-                .foregroundColor(.secondary)
-        }
-    }
-}
+
 
 // MARK: -
 struct ContentView: View {
