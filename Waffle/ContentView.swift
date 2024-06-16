@@ -45,7 +45,7 @@ struct ContentView: View {
 
 // MARK: - Change the device icon for each OS
 func getDeviceIcon() ->  String {
-#if targetEnvironment(macCatalyst)
+#if targetEnvironment(macCatalyst) || os(macOS)
     // TODO: Change the device icon for each Mac series via DeviceHardware
     return "laptopcomputer"
 #else
