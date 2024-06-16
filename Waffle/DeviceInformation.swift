@@ -34,6 +34,8 @@ class DeviceInfo {
     
     let modelIdentifier: String
     
+    let hasDynamicIsland: Bool?
+    
     init() {
         let coreType = CoreTypeInformation()
         
@@ -71,6 +73,8 @@ class DeviceInfo {
         
         efficiencyCore = coreType.efficiencyCoreCount
         performanceCore = coreType.performanceCoreCount
+        
+        hasDynamicIsland = UIDeviceHardware.deviceHardware.hasDynamicIsland
         #endif
     }
 }

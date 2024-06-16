@@ -31,6 +31,10 @@ struct DeviceView: View {
                 ListRow(key: "Neural Engine", value: deviceInfo.neuralEngine)
                 
                 ListRow(key: "RAM", value: deviceInfo.ramString)
+                
+                #if os(iOS)
+                ListRow(key: "Dynamic Island", value: (deviceInfo.hasDynamicIsland ?? false) ? "Yes" : "No")
+                #endif
             }
             .navigationTitle("Device")
         }
