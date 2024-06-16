@@ -33,7 +33,7 @@ struct DeviceView: View {
                 ListRow(key: "RAM", value: deviceInfo.ramString)
                 
                 #if os(iOS)
-                ListRow(key: "DynamicIsland", value: (deviceInfo.hasDynamicIsland ?? false) ? "Yes" : "No")
+                ListRow(key: "Dynamic Island", value: (deviceInfo.hasDynamicIsland ?? false) ? "Yes" : "No")
                 #endif
             }
             .navigationTitle("Device")
