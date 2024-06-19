@@ -22,12 +22,18 @@ struct ContentView: View {
                 Tab("CPU", systemImage: "cpu") {
                     CPUView(processor: processor)
                 }
+                
                 Tab("Device", systemImage: getDeviceIcon()) {
                     DeviceView(deviceInfo: deviceInfo)
+                }
+                
+                Tab("Breath", systemImage: "") {
+                    BreathView()
                 }
             }
             .tabViewStyle(.sidebarAdaptable)
         } else {
+            // Fallback on earlier versions
             TabView {
                 CPUView(processor: processor)
                     .tabItem {
