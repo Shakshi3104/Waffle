@@ -27,7 +27,7 @@ struct ContentView: View {
                     DeviceView(deviceInfo: deviceInfo)
                 }
                 
-                Tab("Breath", systemImage: "") {
+                Tab("Breath", systemImage: "circle.dotted.circle") {
                     BreathView()
                 }
             }

@@ -13,6 +13,7 @@
 		CE0466C82ABC5E3E005ACC25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0466C72ABC5E3E005ACC25 /* Preview Assets.xcassets */; };
 		CE0466D32ABC5ED2005ACC25 /* CoreWafer in Frameworks */ = {isa = PBXBuildFile; productRef = CE0466D22ABC5ED2005ACC25 /* CoreWafer */; };
 		CE0466D52ABC6251005ACC25 /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */; };
+		CE5DF02F2C22FB260042A415 /* BreathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DF02E2C22FB260042A415 /* BreathView.swift */; };
 		CEDBBB1E2B7241D700F94C5F /* CPUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBBB1D2B7241D700F94C5F /* CPUView.swift */; };
 		CEDBBB202B72435F00F94C5F /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */; };
 		CEE3D3F12C1EF47400114C60 /* ProcessorKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEE3D3F02C1EF47400114C60 /* ProcessorKit */; };
@@ -28,6 +29,7 @@
 		CE0466C52ABC5E3E005ACC25 /* Waffle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waffle.entitlements; sourceTree = "<group>"; };
 		CE0466C72ABC5E3E005ACC25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
+		CE5DF02E2C22FB260042A415 /* BreathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathView.swift; sourceTree = "<group>"; };
 		CE736E2D2AC1A69E00B183E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE736E2F2AC1A7BB00B183E4 /* waffle_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waffle_icon.png; sourceTree = "<group>"; };
 		CEDBBB1D2B7241D700F94C5F /* CPUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */,
 				CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */,
 				CEE3D3F52C1F072600114C60 /* UtilityView.swift */,
+				CE5DF02E2C22FB260042A415 /* BreathView.swift */,
 			);
 			path = Waffle;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				CEDBBB202B72435F00F94C5F /* DeviceView.swift in Sources */,
 				CE0466C02ABC5E3D005ACC25 /* WaffleApp.swift in Sources */,
 				CEDBBB1E2B7241D700F94C5F /* CPUView.swift in Sources */,
+				CE5DF02F2C22FB260042A415 /* BreathView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
