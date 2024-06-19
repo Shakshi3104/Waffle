@@ -17,16 +17,28 @@ struct ContentView: View {
     private let deviceInfo = DeviceInfo.shared
     
     var body: some View {
-        TabView {
-            CPUView(processor: processor)
-                .tabItem {
-                    Label("CPU", systemImage: "cpu")
+        if #available(iOS 18, macOS 15, *) {
+            TabView {
+                Tab("CPU", systemImage: "cpu") {
+                    CPUView(processor: processor)
                 }
-            
-            DeviceView(deviceInfo: deviceInfo)
-                .tabItem {
-                    Label("Device", systemImage: getDeviceIcon())
+                Tab("Device", systemImage: getDeviceIcon()) {
+                    DeviceView(deviceInfo: deviceInfo)
                 }
+            }
+            .tabViewStyle(.sidebarAdaptable)
+        } else {
+            TabView {
+                CPUView(processor: processor)
+                    .tabItem {
+                        Label("CPU", systemImage: "cpu")
+                    }
+
+                DeviceView(deviceInfo: deviceInfo)
+                    .tabItem {
+                        Label("Device", systemImage: getDeviceIcon())
+                    }
+            }
         }
     }
 }
