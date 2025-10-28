@@ -11,8 +11,8 @@ This app is similer to [Gaufre for macOS](https://github.com/Shakshi3104/Gaufre)
 ## Requirements
 
 - Xcode 15+
-- macOS 13+
-- iOS 16+
+- macOS 14+
+- iOS 17+
 
 ## Swift Package Dependencies
 
