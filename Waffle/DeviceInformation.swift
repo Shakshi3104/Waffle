@@ -57,6 +57,8 @@ class DeviceInfo {
         
         efficiencyCore = coreType.efficiencyCoreCount
         performanceCore = coreType.performanceCoreCount
+        
+        hasDynamicIsland = nil
         // iOSの場合
         #elseif os(iOS)
         device = UIDeviceHardware.deviceHardware.modelName
