@@ -83,7 +83,9 @@ struct CPUView: View {
                     ListRow(key: "\(processorType) \(index + 1)",
                             value: String(format: "%.2f", coreUsage.user + coreUsage.system) + "%")
                     .padding(4)
-                    Divider()
+                    if index != processor.coreUsages.indices.last {
+                        Divider()
+                    }
                 }
             }
             .padding(.horizontal)
