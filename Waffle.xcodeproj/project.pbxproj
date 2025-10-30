@@ -70,15 +70,12 @@
 		CE0466BE2ABC5E3D005ACC25 /* Waffle */ = {
 			isa = PBXGroup;
 			children = (
+				CEE80F062EB37E3F0074EE3C /* View */,
 				CE0466BF2ABC5E3D005ACC25 /* WaffleApp.swift */,
-				CE0466C12ABC5E3D005ACC25 /* ContentView.swift */,
-				CEDBBB1D2B7241D700F94C5F /* CPUView.swift */,
 				CE0466C32ABC5E3E005ACC25 /* Assets.xcassets */,
 				CE0466C52ABC5E3E005ACC25 /* Waffle.entitlements */,
 				CE0466C62ABC5E3E005ACC25 /* Preview Content */,
 				CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */,
-				CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */,
-				CEE3D3F52C1F072600114C60 /* UtilityView.swift */,
 			);
 			path = Waffle;
 			sourceTree = "<group>";
@@ -97,6 +94,17 @@
 				CE736E2F2AC1A7BB00B183E4 /* waffle_icon.png */,
 			);
 			path = materials;
+			sourceTree = "<group>";
+		};
+		CEE80F062EB37E3F0074EE3C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE0466C12ABC5E3D005ACC25 /* ContentView.swift */,
+				CEE3D3F52C1F072600114C60 /* UtilityView.swift */,
+				CEDBBB1D2B7241D700F94C5F /* CPUView.swift */,
+				CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
