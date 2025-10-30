@@ -17,6 +17,7 @@ struct ContentView: View {
     private let deviceInfo = DeviceInfo.shared
     
     var body: some View {
+        #if os(iOS)
         TabView {
             CPUView(processor: processor)
                 .tabItem {
@@ -28,6 +29,23 @@ struct ContentView: View {
                     Label("Device", systemImage: getDeviceIcon())
                 }
         }
+        
+        #elseif os(macOS) || targetEnvironment(macCatalyst)
+        NavigationSplitView(columnVisibility: .constant(.doubleColumn)) {
+            List {
+                NavigationLink(destination: CPUView(processor: processor)) {
+                    Label("CPU", systemImage: "cpu")
+                }
+                
+                NavigationLink(destination: DeviceView(deviceInfo: deviceInfo)) {
+                    Label("Device", systemImage: getDeviceIcon())
+                }
+            }
+        } detail: {
+            CPUView(processor: processor)
+        }
+        // .frame(minWidth: 715, maxWidth: 715, minHeight: 470, maxHeight: .infinity)
+        #endif
     }
 }
 
