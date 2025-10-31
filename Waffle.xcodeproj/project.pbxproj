@@ -20,6 +20,19 @@
 		CEE3D3F62C1F072600114C60 /* UtilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3D3F52C1F072600114C60 /* UtilityView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CEE80F222EB388B90074EE3C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CE0466BC2ABC5E3D005ACC25 /* Waffle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waffle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0466BF2ABC5E3D005ACC25 /* WaffleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaffleApp.swift; sourceTree = "<group>"; };
@@ -30,9 +43,16 @@
 		CE0466D42ABC6251005ACC25 /* DeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
 		CE736E2D2AC1A69E00B183E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE736E2F2AC1A7BB00B183E4 /* waffle_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waffle_icon.png; sourceTree = "<group>"; };
+		CEC2563F2EB4C8B0007E2ED7 /* IMG_2388.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2388.PNG; sourceTree = "<group>"; };
+		CEC256402EB4C8B0007E2ED7 /* IMG_2389.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2389.PNG; sourceTree = "<group>"; };
+		CEC256412EB4C8B0007E2ED7 /* waffle_macos_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waffle_macos_1.png; sourceTree = "<group>"; };
+		CEC256422EB4C8B0007E2ED7 /* waffle_macos_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waffle_macos_2.png; sourceTree = "<group>"; };
+		CEC256432EB4CC80007E2ED7 /* waffle_ios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waffle_ios.png; sourceTree = "<group>"; };
 		CEDBBB1D2B7241D700F94C5F /* CPUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUView.swift; sourceTree = "<group>"; };
 		CEDBBB1F2B72435F00F94C5F /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		CEE3D3F52C1F072600114C60 /* UtilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityView.swift; sourceTree = "<group>"; };
+		CEE80F0F2EB388B80074EE3C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CEE80F112EB388B80074EE3C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +75,7 @@
 				CE736E2E2AC1A79C00B183E4 /* materials */,
 				CE736E2D2AC1A69E00B183E4 /* README.md */,
 				CE0466BE2ABC5E3D005ACC25 /* Waffle */,
+				CEE80F0E2EB388B80074EE3C /* Frameworks */,
 				CE0466BD2ABC5E3D005ACC25 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +112,12 @@
 		CE736E2E2AC1A79C00B183E4 /* materials */ = {
 			isa = PBXGroup;
 			children = (
+				CEC2563F2EB4C8B0007E2ED7 /* IMG_2388.PNG */,
+				CEC256402EB4C8B0007E2ED7 /* IMG_2389.PNG */,
+				CEC256412EB4C8B0007E2ED7 /* waffle_macos_1.png */,
+				CEC256422EB4C8B0007E2ED7 /* waffle_macos_2.png */,
 				CE736E2F2AC1A7BB00B183E4 /* waffle_icon.png */,
+				CEC256432EB4CC80007E2ED7 /* waffle_ios.png */,
 			);
 			path = materials;
 			sourceTree = "<group>";
@@ -107,6 +133,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CEE80F0E2EB388B80074EE3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEE80F0F2EB388B80074EE3C /* WidgetKit.framework */,
+				CEE80F112EB388B80074EE3C /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,6 +152,7 @@
 				CE0466B82ABC5E3D005ACC25 /* Sources */,
 				CE0466B92ABC5E3D005ACC25 /* Frameworks */,
 				CE0466BA2ABC5E3D005ACC25 /* Resources */,
+				CEE80F222EB388B90074EE3C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -139,7 +175,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					CE0466BB2ABC5E3D005ACC25 = {
@@ -328,6 +364,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Waffle/Preview Content\"";
+				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -370,6 +407,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Waffle/Preview Content\"";
+				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
