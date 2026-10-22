@@ -1,0 +1,39 @@
+{
+  "env": {
+    "APP_ID": "",
+    "PROJECT_PATH": "Waffle.xcodeproj",
+    "SCHEME": "Waffle",
+    "CONFIGURATION": "Release",
+    "EXPORT_OPTIONS": ".asc/export-options.plist",
+    "VERSION": ""
+  },
+  "workflows": {
+    "testflight_internal": {
+      "description": "Archive Waffle (iOS), export an IPA, and upload to TestFlight for internal testing. Build number is auto-managed by the Xcode Run Script phase (git commit count). Signing uses the App Store Connect API key from .env (ASC_KEY_ID / ASC_ISSUER_ID / ASC_PRIVATE_KEY_PATH) when set, so it does not depend on an Apple ID being signed into Xcode.",
+      "steps": [
+        {
+          "name": "validate_inputs",
+          "run": "if [ -z \"$VERSION\" ]; then echo \"VERSION is required (e.g. asc workflow run testflight_internal VERSION:1.0)\" >&2; exit 1; fi; if [ -z \"$APP_ID\" ]; then APP_ID=\"$ASC_APP_ID\"; fi; if [ -z \"$APP_ID\" ]; then echo \"APP_ID is required (set ASC_APP_ID in .env or pass APP_ID:<id>)\" >&2; exit 1; fi"
+        },
+        {
+          "name": "archive",
+          "run": "AUTH_FLAGS=\"\"; if [ -n \"$ASC_PRIVATE_KEY_PATH\" ]; then AUTH_FLAGS=\"--xcodebuild-flag=-authenticationKeyPath --xcodebuild-flag=$ASC_PRIVATE_KEY_PATH --xcodebuild-flag=-authenticationKeyID --xcodebuild-flag=$ASC_KEY_ID --xcodebuild-flag=-authenticationKeyIssuerID --xcodebuild-flag=$ASC_ISSUER_ID\"; fi; asc xcode archive --project \"$PROJECT_PATH\" --scheme \"$SCHEME\" --configuration \"$CONFIGURATION\" --archive-path \".asc/artifacts/Waffle-$VERSION.xcarchive\" --clean --overwrite --xcodebuild-flag=-destination --xcodebuild-flag=generic/platform=iOS --xcodebuild-flag=-allowProvisioningUpdates $AUTH_FLAGS --xcodebuild-flag=MARKETING_VERSION=$VERSION --output json",
+          "outputs": {
+            "ARCHIVE_PATH": "$.archive_path"
+          }
+        },
+        {
+          "name": "export",
+          "run": "AUTH_FLAGS=\"\"; if [ -n \"$ASC_PRIVATE_KEY_PATH\" ]; then AUTH_FLAGS=\"--xcodebuild-flag=-authenticationKeyPath --xcodebuild-flag=$ASC_PRIVATE_KEY_PATH --xcodebuild-flag=-authenticationKeyID --xcodebuild-flag=$ASC_KEY_ID --xcodebuild-flag=-authenticationKeyIssuerID --xcodebuild-flag=$ASC_ISSUER_ID\"; fi; asc xcode export --archive-path ${steps.archive.ARCHIVE_PATH} --export-options \"$EXPORT_OPTIONS\" --ipa-path \".asc/artifacts/Waffle-$VERSION.ipa\" --overwrite --xcodebuild-flag=-allowProvisioningUpdates $AUTH_FLAGS --output json",
+          "outputs": {
+            "IPA_PATH": "$.ipa_path"
+          }
+        },
+        {
+          "name": "upload",
+          "run": "if [ -z \"$APP_ID\" ]; then APP_ID=\"$ASC_APP_ID\"; fi; asc builds upload --app \"$APP_ID\" --ipa ${steps.export.IPA_PATH} --wait --output json"
+        }
+      ]
+    }
+  }
+}
