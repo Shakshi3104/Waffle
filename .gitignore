@@ -70,3 +70,9 @@ fastlane/test_output
 
 # Virtual environment
 .venv/
+
+# App Store Connect (asc)
+.env
+.asc/config.json
+.asc/artifacts/
+.asc/runs/
