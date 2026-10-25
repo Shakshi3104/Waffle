@@ -10,6 +10,7 @@ import UIKit
 #endif
 
 import Foundation
+import SwiftUI
 
 import CoreWafer
 import DeviceHardware
@@ -35,7 +36,10 @@ class DeviceInfo {
     let modelIdentifier: String
     
     let hasDynamicIsland: Bool?
-    
+
+    /// - Tag: core type style
+    let coreTypeStyle: CoreTypeStyle
+
     init() {
         let coreType = CoreTypeInformation()
         
@@ -78,6 +82,41 @@ class DeviceInfo {
         
         hasDynamicIsland = UIDeviceHardware.deviceHardware.hasDynamicIsland
         #endif
+
+        coreTypeStyle = CoreTypeStyle(processorName: processor)
     }
 }
 
+/// CPUコアの呼び方と色
+/// M5・A20 Pro以降は旧Performanceコアを「Super」と呼び、M5 Pro/MaxはEfficiencyコアの代わりに新しい「Performance」コアを持つ
+struct CoreTypeStyle {
+    /// 下位コア (hw.perflevel1) の呼び方
+    let lowerLabel: String
+    /// 上位コア (hw.perflevel0) の呼び方
+    let upperLabel: String
+    /// 下位コアの色
+    let lowerColor: Color
+    /// 上位コアの色
+    let upperColor: Color
+    
+    init(processorName: String) {
+        // "Apple A20 Pro", "Apple M5 Max" などから系列・世代・グレードを取り出す
+        guard let match = processorName.firstMatch(of: /Apple ([AM])(\d+)(?: (Pro|Max|Ultra))?/),
+              let generation = Int(match.2) else {
+            lowerLabel = "Efficiency"
+            upperLabel = "Performance"
+            lowerColor = .peacockGreen
+            upperColor = .iris
+            return
+        }
+        
+        let isMSeries = match.1 == "M"
+        let hasSuperCores = isMSeries ? generation >= 5 : generation >= 20
+        let hasNewPerformanceCores = isMSeries && generation >= 5 && match.3 != nil
+        
+        lowerLabel = hasNewPerformanceCores ? "Performance" : "Efficiency"
+        upperLabel = hasSuperCores ? "Super" : "Performance"
+        lowerColor = hasNewPerformanceCores ? .iris : .peacockGreen
+        upperColor = hasSuperCores ? .marigold : .iris
+    }
+}
