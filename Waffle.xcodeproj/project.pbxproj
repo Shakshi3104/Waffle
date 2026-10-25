@@ -510,7 +510,7 @@
 			repositoryURL = "https://github.com/Shakshi3104/DeviceHardware";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 3.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
