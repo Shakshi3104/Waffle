@@ -22,7 +22,14 @@ Bundle ID `com.shakshi.WaffleApp` (iOS) でアプリレコードを作成し、U
 
 ```bash
 cp .env.example .env
-# ASC_KEY_ID / ASC_ISSUER_ID / ASC_PRIVATE_KEY_PATH / ASC_APP_ID を入力
+# ASC_KEY_ID / ASC_ISSUER_ID / ASC_PRIVATE_KEY_PATH / ASC_APP_ID / ASC_BETA_GROUP_ID を入力
+```
+
+`ASC_BETA_GROUP_ID` は配信先の Internal テストグループの ID です。グループが無ければ作成してから ID を控えます。
+
+```bash
+asc testflight groups create --app "$ASC_APP_ID" --name "<App> Internal" --internal
+asc testflight groups list --app "$ASC_APP_ID" --internal
 ```
 
 API キーは Specter / yomy などと共通のチームキーを使えます。`.env` は `.gitignore` 済みです。
@@ -36,7 +43,7 @@ set -a; source .env; set +a
 asc workflow run testflight_internal VERSION:1.0
 ```
 
-archive → IPA エクスポート → アップロード → 処理完了待ち を 1 コマンドで実行。処理が終わると Internal Tester(App Store Connect の Users and Access に登録され、Internal Testing グループに入っているユーザー)に届きます。
+archive → IPA エクスポート → アップロード → 処理完了待ち → `ASC_BETA_GROUP_ID` のグループへの割り当て を 1 コマンドで実行。割り当てが終わると、そのグループに入っている Internal Tester に届きます。
 
 ---
 
