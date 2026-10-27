@@ -22,9 +22,9 @@ struct DeviceView: View {
                 ListRow(key: "Processor", value: deviceInfo.processor)
                 
                 ListRow(key: "CPU", value: deviceInfo.cpu)
-                ListRow(key: "Efficiency Cores",
+                ListRow(key: "\(deviceInfo.coreTypeStyle.lowerLabel) Cores",
                         value: "\(deviceInfo.efficiencyCore)-core")
-                ListRow(key: "Performance Cores",
+                ListRow(key: "\(deviceInfo.coreTypeStyle.upperLabel) Cores",
                         value: "\(deviceInfo.performanceCore)-core")
                 
                 ListRow(key: "GPU", value: deviceInfo.gpu)
@@ -66,12 +66,12 @@ struct DeviceView: View {
                     .padding(4)
                 Divider()
                 
-                ListRow(key: "Efficiency Cores",
+                ListRow(key: "\(deviceInfo.coreTypeStyle.lowerLabel) Cores",
                         value: "\(deviceInfo.efficiencyCore)-core")
                     .padding(4)
                 Divider()
                 
-                ListRow(key: "Performance Cores",
+                ListRow(key: "\(deviceInfo.coreTypeStyle.upperLabel) Cores",
                         value: "\(deviceInfo.performanceCore)-core")
                     .padding(4)
                 Divider()

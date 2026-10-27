@@ -494,7 +494,7 @@
 			repositoryURL = "https://github.com/Shakshi3104/CoreWafer.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.7;
+				minimumVersion = 0.0.15;
 			};
 		};
 		CEE3D3EF2C1EF47400114C60 /* XCRemoteSwiftPackageReference "ProcessorKit" */ = {

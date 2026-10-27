@@ -12,6 +12,7 @@ import CoreWafer
 struct CPUView: View {
     @ObservedObject var processor: ProcessorObserver
     let coreTypeInfo = CoreTypeInformation()
+    let coreTypeStyle = DeviceInfo.shared.coreTypeStyle
     
     var body: some View {
         NavigationStack {
@@ -19,7 +20,9 @@ struct CPUView: View {
                 Section("Usage") {
                     HStack {
                         Spacer()
-                        WafersView(processor: processor)
+                        WafersView(processor: processor,
+                                   efficiencyCoreColor: coreTypeStyle.lowerColor,
+                                   performanceCoreColor: coreTypeStyle.upperColor)
                             .scaleEffect(0.65)
                             
                         Spacer()
@@ -33,7 +36,7 @@ struct CPUView: View {
                 
                 Section("Each Core") {
                     ForEach(processor.coreUsages.indices, id: \.self) { index in
-                        let processorType = index < coreTypeInfo.efficiencyCoreCount ? "Efficiency" : "Performance"
+                        let processorType = index < coreTypeInfo.efficiencyCoreCount ? coreTypeStyle.lowerLabel : coreTypeStyle.upperLabel
                         let coreUsage = processor.coreUsages[index]
                         ListRow(key: "\(processorType) \(index + 1)",
                                 value: String(format: "%.2f", coreUsage.user + coreUsage.system) + "%")
@@ -53,13 +56,16 @@ struct CPUView: View {
 struct CPUView: View {
     @ObservedObject var processor: ProcessorObserver
     let coreTypeInfo = CoreTypeInformation()
+    let coreTypeStyle = DeviceInfo.shared.coreTypeStyle
     
     var body: some View {
         ScrollView {
             GroupBox {
                 HStack {
                     Spacer()
-                    WafersView(processor: processor)
+                    WafersView(processor: processor,
+                               efficiencyCoreColor: coreTypeStyle.lowerColor,
+                               performanceCoreColor: coreTypeStyle.upperColor)
                         .scaleEffect(0.65)
                     
                     Spacer()
@@ -78,7 +84,7 @@ struct CPUView: View {
             
             GroupBox {
                 ForEach(processor.coreUsages.indices, id: \.self) { index in
-                    let processorType = index < coreTypeInfo.efficiencyCoreCount ? "Efficiency" : "Performance"
+                    let processorType = index < coreTypeInfo.efficiencyCoreCount ? coreTypeStyle.lowerLabel : coreTypeStyle.upperLabel
                     let coreUsage = processor.coreUsages[index]
                     ListRow(key: "\(processorType) \(index + 1)",
                             value: String(format: "%.2f", coreUsage.user + coreUsage.system) + "%")
