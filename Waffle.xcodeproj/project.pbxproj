@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE0466C02ABC5E3D005ACC25 /* WaffleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0466BF2ABC5E3D005ACC25 /* WaffleApp.swift */; };
 		CE0466C22ABC5E3D005ACC25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0466C12ABC5E3D005ACC25 /* ContentView.swift */; };
+		8CD8E9BD3ACB0558411E7151 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 12E731346388A0FE9D559ED1 /* AppIcon.icon */; };
 		CE0466C42ABC5E3E005ACC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0466C32ABC5E3E005ACC25 /* Assets.xcassets */; };
 		CE0466C82ABC5E3E005ACC25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0466C72ABC5E3E005ACC25 /* Preview Assets.xcassets */; };
 		CE0466D32ABC5ED2005ACC25 /* CoreWafer in Frameworks */ = {isa = PBXBuildFile; productRef = CE0466D22ABC5ED2005ACC25 /* CoreWafer */; };
@@ -37,6 +38,7 @@
 		CE0466BC2ABC5E3D005ACC25 /* Waffle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waffle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0466BF2ABC5E3D005ACC25 /* WaffleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaffleApp.swift; sourceTree = "<group>"; };
 		CE0466C12ABC5E3D005ACC25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12E731346388A0FE9D559ED1 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		CE0466C32ABC5E3E005ACC25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0466C52ABC5E3E005ACC25 /* Waffle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waffle.entitlements; sourceTree = "<group>"; };
 		CE0466C72ABC5E3E005ACC25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				CEE80F062EB37E3F0074EE3C /* View */,
 				CE0466BF2ABC5E3D005ACC25 /* WaffleApp.swift */,
+				12E731346388A0FE9D559ED1 /* AppIcon.icon */,
 				CE0466C32ABC5E3E005ACC25 /* Assets.xcassets */,
 				CE0466C52ABC5E3E005ACC25 /* Waffle.entitlements */,
 				CE0466C62ABC5E3E005ACC25 /* Preview Content */,
@@ -214,6 +217,7 @@
 			files = (
 				CE0466C82ABC5E3E005ACC25 /* Preview Assets.xcassets in Resources */,
 				CE0466C42ABC5E3E005ACC25 /* Assets.xcassets in Resources */,
+				8CD8E9BD3ACB0558411E7151 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
